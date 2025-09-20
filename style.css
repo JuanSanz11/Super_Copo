@@ -1,0 +1,147 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(270deg, #ffd6d6, #ffe5b4, #d6f5d6, #d6e0ff);
+  background-size: 600% 600%;
+  animation: pastelShift 20s ease infinite;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.reference-image {
+  width: 140px; /* Puedes ajustar a 100px, 80px, etc. según lo que prefieras */
+  height: auto;
+  margin-top: 40px;
+  //margin-bottom: 20px;
+  //border: 2px solid #ccc;
+  //border-radius: 8px;
+  //box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.reference-image:hover {
+  filter: brightness(1.2);
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+#workspace {
+  display: flex;
+  justify-content: flex-start; /* antes: center */
+  align-items: flex-start;
+  gap: 60px;
+  margin-top: 20px;
+  width: 100%; /* ocupa todo el ancho disponible */
+  max-width: 605px; /* opcional: limita el ancho total */
+}
+
+.pieces {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.piece {
+  width:70px;
+  cursor: grab;
+}
+
+.piece:hover {
+  filter: brightness(1.2);
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+.dropzone {
+  width: 200px;
+  height: 300px;
+  border: 3px solid #007BFF;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  background: #fff;
+  position: relative;
+  padding-top: 10px;
+}
+
+#shuffle {
+  margin-top: 40px; /* Puedes ajustar el valor según lo que necesites */
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: 2px solid #0056b3;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+
+#shuffle:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+#shuffle:hover {
+  background-color: #0056b3;
+}
+
+.sticker {
+  position: absolute;
+  width: 30px;
+  left: 85px;
+  top: 230px;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.6s ease-in-out;
+  z-index: 10;
+}
+
+.sticker.show {
+  opacity: 1;
+  transform: scale(1.2) rotate(-5deg);
+}
+
+.hidden {
+  display: none;
+}
+
+.assembled {
+  animation: snapTogether 0.5s ease-in-out forwards;
+}
+
+@keyframes snapTogether {
+  0% {
+    transform: scale(1.05);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

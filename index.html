@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Vaso de Cafe o Té</h1>
+<h5>
+  Arrastra las piezas del vaso hacia el panel azul para armarlas en el orden correcto. Cada ficha representa una parte del copo: tapa, cuerpo x 2 y base. ¡Colócalas una sobre otra y completa tu vaso LEGO de café!
+</h5>
+
+  <div id="workspace">
+
+  <div class="reference-image" id="reference-image">
+    <img src="../assets/vaso_completo.png" alt="Vaso de muestra" class="reference-image">
+  </div>
+
+
+    <div class="dropzone" id="cup-area">
+      <img src="../assets/sticker.png" id="flame-sticker" class="sticker hidden">
+    </div>
+
+    <div class="pieces">
+      <img src="../assets/tapa.png" draggable="true" class="piece" id="lid">
+      <img src="../assets/cuerpo_superior.png" draggable="true" class="piece" id="rim">
+      <img src="../assets/cuerpo_medio.png" draggable="true" class="piece" id="body">
+      <img src="../assets/base.png" draggable="true" class="piece" id="base">
+    </div>
+  </div>
+
+  <button id="shuffle">Rebobinar</button>
+
+  <h5>"Cada copo biodegradable que usamos es un pequeño gesto con gran impacto: menos plástico, más conciencia, más futuro. 🌱☕ #CopoConsciente #DiseñoSustentable #EcoVaso"
+  </h5>
+
+  <script src="script.js"></script>
+</body>
+</html>
